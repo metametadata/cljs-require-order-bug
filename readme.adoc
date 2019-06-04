@@ -1,5 +1,7 @@
 # cljs-require-order-bug
 
+Seems to be caused by https://clojure.atlassian.net/browse/CLJS-3056.
+
 Minimal example to demonstrate the problem caused by trying to do "ns preloading" using `:require`.
 
 . Run `./dev.sh`. Page will be open in browser.
