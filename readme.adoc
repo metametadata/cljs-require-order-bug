@@ -1,0 +1,33 @@
+# cljs-require-order-bug
+
+Minimal example to demonstrate the problem caused by trying to do ns preloading using `:require`.
+
+1) Run `./dev.sh`. Page will be open in browser.
+2) Open browser console to see the logs.
+    
+**Actual:** `Error: No method in multimethod 'app.lib/greeting' for dispatch value: :world`.
+
+**Expected:** `Hello World!` is printed.
+
+Seems to be caused by the incorrect order of requiring compiled files
+(traced by manually putting `console.log` at the beginning of each file):
+
+....
+main.js
+out/lib.js
+out/world.js
+out/preload.js
+out/main.js
+....
+
+Intuitively expected order (as dictated by the order of requires in `main.cljs`):
+
+....
+main.js
+out/lib.js
+out/preload.js
+out/world.js
+out/main.js
+....
+
+Issue is also reproducible on advanced compilation (`./min.sh`).
