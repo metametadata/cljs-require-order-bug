@@ -2,8 +2,8 @@
 
 Minimal example to demonstrate the problem caused by trying to do ns preloading using `:require`.
 
-1) Run `./dev.sh`. Page will be open in browser.
-2) Open browser console to see the logs.
+. Run `./dev.sh`. Page will be open in browser.
+. Open browser console to see the logs.
     
 **Actual:** `Error: No method in multimethod 'app.lib/greeting' for dispatch value: :world`.
 
