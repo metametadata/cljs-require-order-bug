@@ -1,6 +1,6 @@
 # cljs-require-order-bug
 
-Minimal example to demonstrate the problem caused by trying to do ns preloading using `:require`.
+Minimal example to demonstrate the problem caused by trying to do "ns preloading" using `:require`.
 
 . Run `./dev.sh`. Page will be open in browser.
 . Open browser console to see the logs.
